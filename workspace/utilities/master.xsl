@@ -21,7 +21,7 @@
   <head>
     <xsl:choose>
       <xsl:when test="$page-title = 'Home'">
-        <title>Brian Simcoe</title>
+        <title><xsl:value-of select="$website-name"/></title>
       </xsl:when>
       <xsl:otherwise>
         <title>
@@ -47,7 +47,8 @@
             </xsl:call-template>
             <xsl:text> | </xsl:text>
           </xsl:if>
-          <xsl:text>Brian Simcoe | </xsl:text>
+          <xsl:value-of select="$website-name"/>
+          <xsl:text> | </xsl:text>
           <xsl:value-of select="//data/page-data/entry/title" />
         </title>
       </xsl:otherwise>
@@ -115,7 +116,7 @@
         </xsl:attribute>
         <div class="container">
           <div>
-            <h2 class="brand">Brian Simcoe<span>&#160;&#160;Fine Art</span></h2>
+            <h2 class="brand">Karli Noelle Photography</h2>
           </div>
           <p class="vision">
             <em>The artistic <span class="amp">&amp;</span> creative portfolio of Brian Simcoe</em>
@@ -152,7 +153,8 @@
           <xsl:text>&#xa9;&#160;</xsl:text>
           <xsl:value-of select="$this-year" />
           <xsl:text>.&#160;</xsl:text>
-          <xsl:text>Brian Simcoe. All rights reserved.&#160;|&#160;</xsl:text>
+          <xsl:value-of select="$website-name"/>
+          <xsl:text>. All rights reserved.&#160;|&#160;</xsl:text>
           <a href="{$root}/rss/" class="rss badge">RSS</a>
         </p>
       </div>
