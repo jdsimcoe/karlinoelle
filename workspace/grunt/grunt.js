@@ -9,22 +9,22 @@ module.exports = function (grunt) {
 
     lint : {
       all: [
-        '../js/briansimcoe.js'
+        '../js/master.js'
       ]
     },
 
     minify : {
       all: [
-        '../less/briansimcoe.less'
+        '../less/master.less'
       ]
     },
 
     recess: {
       main: {
         src: [
-        '../less/briansimcoe.less'
+        '../less/master.less'
         ],
-        dest: '../css/briansimcoe.1.0.2.css',
+        dest: '../css/master.1.0.0.css',
         options: {
             compile: true,
             compress: true
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
           '../js/responsimage.js',
           '../js/reftagger.js',
         ],
-        dest: '../js/briansimcoe.1.0.2.js',
+        dest: '../js/master.1.0.0.js',
         separator: ';'
       }
     },

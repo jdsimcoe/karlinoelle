@@ -103,9 +103,9 @@
 
               </a>
             </h1>
-            <p class="lead">
+<!--             <p class="lead">
               <xsl:value-of select="//data/page-data/entry/description" />
-            </p>
+            </p> -->
           </div>
         </div>
       </xsl:if>

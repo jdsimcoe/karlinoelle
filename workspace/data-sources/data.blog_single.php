@@ -2,31 +2,34 @@
 
 	require_once(TOOLKIT . '/class.datasource.php');
 
-	Class datasourceartwork_3_latest extends SectionDatasource{
+	Class datasourceblog_single extends SectionDatasource{
 
-		public $dsParamROOTELEMENT = 'artwork-3-latest';
+		public $dsParamROOTELEMENT = 'blog-single';
 		public $dsParamORDER = 'desc';
 		public $dsParamPAGINATERESULTS = 'yes';
-		public $dsParamLIMIT = '4';
+		public $dsParamLIMIT = '1';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
-		public $dsParamSORT = 'date';
+		public $dsParamREQUIREDPARAM = '$title';
+		public $dsParamSORT = 'system:id';
+		public $dsParamHTMLENCODE = 'yes';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 		
 
 		public $dsParamFILTERS = array(
-				'81' => 'no',
-				'79' => 'no',
+				'1' => '{$title}',
 		);
 		
 
 		public $dsParamINCLUDEDELEMENTS = array(
 				'title',
+				'date',
+				'content: formatted',
 				'image: image',
 				'image: caption',
-				'media: title',
-				'medium: title',
-				'dimensions'
+				'verses: passage',
+				'verses: content',
+				'verses: version: abbreviation'
 		);
 		
 
@@ -37,18 +40,18 @@
 
 		public function about(){
 			return array(
-				'name' => 'Artwork: 3 Latest',
+				'name' => 'Blog: Single',
 				'author' => array(
 					'name' => 'Jonathan Simcoe',
-					'website' => 'http://briansimcoe',
+					'website' => 'http://karlinoelle',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-03-20T05:43:54+00:00'
+				'release-date' => '2013-03-20T20:25:04+00:00'
 			);
 		}
 
 		public function getSource(){
-			return '13';
+			return '1';
 		}
 
 		public function allowEditorToParse(){
