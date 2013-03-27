@@ -59,13 +59,15 @@
     <meta name="author" content="Brian Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/briansimcoe.1.0.2.css" rel="stylesheet" />
+    <link href="{$workspace}/css/master.1.0.0.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
+    <script type="text/javascript" src="{$workspace}/js/master.1.0.0.js"></script>
+
     <script type="text/javascript">
       <xsl:comment>
-        var _gaq=[["_setAccount","UA-38166333-1"],["_trackPageview"]];
+        var _gaq=[["_setAccount","UA-00000000-0"],["_trackPageview"]];
         (function(d,t){
           var g=d.createElement(t), s=d.getElementsByTagName(t)[0];
           g.async=1;
@@ -115,12 +117,7 @@
           <xsl:text>jumbotron masthead</xsl:text>
         </xsl:attribute>
         <div class="container">
-          <div>
-            <h2 class="brand">Karli Noelle Photography</h2>
-          </div>
-          <p class="vision">
-            <em>The artistic <span class="amp">&amp;</span> creative portfolio of Brian Simcoe</em>
-          </p>
+          <h1 class="logo">K</h1>
         </div>
       </xsl:if>
     </div>
@@ -135,59 +132,80 @@
       <div class="container">
         <div class="row">
           <div class="span2">
-            <a href="{root}" class="brand">BS:<span>C</span></a>
+            <a href="{root}" class="brand">K</a>
+          </div>
+          <div class="insta">
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+            <div class="span1">
+              <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
+            </div>
+          </div>
+        </div>
+        <div class="row link-row">
+          <div class="span12">
+            <h5 class="right">
+              <a href="/" class="instagram">From Instagram</a>
+            </h5>
+          </div>
+        </div>
+        <div class="row main-row">
+          <div class="span2">
             <ul class="nav nav-list">
               <xsl:apply-templates select="data/navigation/page"/>
             </ul>
           </div>
-          <div class="span6">
-            <h5>A Blurb</h5>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis.</p>
-          </div>
-          <div class="span4">
-            <h5>Contact Brian</h5>
+          <div class="span10">
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
           </div>
         </div>
-        <hr class="special"/>
-        <p class="center copyright">
-          <xsl:text>&#xa9;&#160;</xsl:text>
-          <xsl:value-of select="$this-year" />
-          <xsl:text>.&#160;</xsl:text>
-          <xsl:value-of select="$website-name"/>
-          <xsl:text>. All rights reserved.&#160;|&#160;</xsl:text>
-          <a href="{$root}/rss/" class="rss badge">RSS</a>
-        </p>
       </div>
     </footer>
 
-    <script type="text/javascript">
-    <xsl:comment>
-    (function (window) {
-      'use strict';
-      function downloadJSAtOnload() {
-        var js = {
-          "scripts":[
-            "/workspace/js/briansimcoe.1.0.2.js"
-          ]
-        };
-        for (var key in js.scripts) {
-          if (js.scripts[key]) {
-            var element=document.createElement("script");
-            element.src=js.scripts[key];
-            document.body.appendChild(element);
-          }
-        }
-      }
-      if(window.addEventListener) {
-        window.addEventListener("load",downloadJSAtOnload,false);
-      } else if (window.attachEvent) {
-        window.attachEvent("onload",downloadJSAtOnload);
-      } else {
-        window.onload=downloadJSAtOnload;
-      }
-    }(window));
-    //</xsl:comment>
-    </script>
+    <div class="baseline">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <p class="center">
+              <xsl:text>&#xa9;&#160;2011–</xsl:text>
+              <xsl:value-of select="$this-year" />
+              <xsl:text>.&#160;</xsl:text>
+              <xsl:value-of select="$website-name"/>
+              <xsl:text>. All rights reserved.&#160;&#160;|&#160;&#160;</xsl:text>
+              <a class="rss" href="{$root}/rss/">RSS</a>
+              <xsl:text>&#160;&#160;|&#160;&#160;</xsl:text>
+              <a href="http://getsymphony.com/">Built with <strong>Symphony CMS</strong></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 
 </html>
@@ -202,7 +220,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand pull-left" href="/"><strong>b</strong></a>
+      <a class="brand pull-left" href="/">K <span class="ostrich">Karli Noelle Photography</span></a>
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <xsl:apply-templates select="page"/>

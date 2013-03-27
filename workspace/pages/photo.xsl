@@ -58,7 +58,7 @@
       <xsl:if test="featured = 'Yes'">
         <div class="featured small">Featured</div>
       </xsl:if>
-      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:199px; height:199px;">
+      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:240px; height:240px;">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>
@@ -76,7 +76,7 @@
     </h3>
     <div class="row">
       <div class="span12">
-        <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:100%; height:600px;">
+        <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:100%; height:100%;">
           <xsl:attribute name="data-responsimage">
             <xsl:value-of select="image/item/image/filename" />
           </xsl:attribute>

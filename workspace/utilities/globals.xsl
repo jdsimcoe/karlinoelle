@@ -145,111 +145,37 @@
 </xsl:template>
 
 
-<!-- ARTWORK
-     ======= -->
+<!-- PHOTOGRAPHY
+     =========== -->
 
-
-<xsl:template match="/data/artwork-3-latest/entry">
-  <xsl:call-template name="artwork-entry"/>
+<xsl:template match="/data/photo-featured/entry">
+  <xsl:call-template name="photo-featured-entry"/>
 </xsl:template>
 
 
-<xsl:template name="artwork-entry">
+<xsl:template name="photo-featured-entry">
 
-  <div class="span4 artwork">
-    <a href="{$root}/artwork/{title/@handle}" class="artwork-entry home">
+  <div class="span12 photo">
+    <a href="{$root}/photo/{title/@handle}" class="photo-entry home featured">
       <div class="metadata">
         <h4>
           <xsl:value-of select="title" />
         </h4>
-        <p>
-          <xsl:value-of select="media"/>
-          <xsl:if test="medium != ''">
-            <xsl:text> on </xsl:text>
-            <xsl:value-of select="medium"/>
-          </xsl:if>
-          <br/>
-          <span class="dimensions">
-            <xsl:text>Dimensions:</xsl:text>
-            <xsl:value-of select="dimensions"/>
-          </span>
-          <xsl:if test="price != ''">
-            <span class="badge number">
-              <xsl:text>$</xsl:text>
-              <xsl:value-of select="price"/>
-              <xsl:text>.</xsl:text>
-              <sup>00</sup>
-            </span>
-          </xsl:if>
+        <p class="description">
+          <em><xsl:value-of select="image/item/caption"/></em>
         </p>
-
       </div>
-      <img class="img-artwork" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:200px;">
+      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:550px;">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>
       </img>
-
-
     </a>
   </div>
 
 </xsl:template>
 
 
-<xsl:template match="/data/artwork-featured/entry">
-  <xsl:call-template name="artwork-featured-entry"/>
-</xsl:template>
-
-
-<xsl:template name="artwork-featured-entry">
-  <div class="span12">
-    <div class="artwork">
-      <a href="{$root}/artwork/{title/@handle}" class="artwork-entry home featured">
-        <div class="metadata">
-          <h4>
-            <xsl:value-of select="title" />
-          </h4>
-          <p>
-            <xsl:value-of select="media"/>
-            <xsl:if test="medium != ''">
-              <xsl:text> on </xsl:text>
-              <xsl:value-of select="medium"/>
-            </xsl:if>
-            <br/>
-            <span class="dimensions">
-              <xsl:text>Dimensions:</xsl:text>
-              <xsl:value-of select="dimensions"/>
-            </span>
-            <xsl:if test="price != ''">
-              <span class="badge number">
-                <xsl:text>$</xsl:text>
-                <xsl:value-of select="price"/>
-                <xsl:text>.</xsl:text>
-                <sup>00</sup>
-              </span>
-            </xsl:if>
-          </p>
-
-        </div>
-        <div class="featured">Featured</div>
-        <img class="img-artwork" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:550px;">
-          <xsl:attribute name="data-responsimage">
-            <xsl:value-of select="image/item/image/filename" />
-          </xsl:attribute>
-        </img>
-
-
-      </a>
-    </div>
-  </div>
-
-</xsl:template>
-
-
-
-<!-- PHOTOGRAPHY
-     =========== -->
 
 <xsl:template match="/data/photo-4-latest/entry">
   <xsl:call-template name="photo-entry"/>
@@ -268,7 +194,7 @@
           <em><xsl:value-of select="image/item/caption"/></em>
         </p>
       </div>
-      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:199px; height:199px;">
+      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:240px; height:240px;">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />
         </xsl:attribute>

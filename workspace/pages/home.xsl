@@ -15,7 +15,7 @@
 
     <div class="row">
       <div class="span12">
-        <h3 class="section-header art">Artwork</h3>
+        <h3 class="section-header art">Featured</h3>
       </div>
     </div>
 

@@ -94,7 +94,8 @@
 @color-black: #333;
 @color-gray-light: #e9e9e9;
 @color-body: @color-white;
-@color-accent: #667780;
+@color-accent: #555;
+@color-pop: blue;
 @color-secondary: #728586;
 @color-mast: @color-accent;
 
@@ -110,9 +111,24 @@
 
 @sans: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 @serif: Georgia, Times, serif;
-@courier: 'Courier Prime', 'Courier New', Courier, monospace;
-@league: 'League Gothic', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@ostrich: OstrichSans, sans-serif;
 @league-script: 'League Script', cursive;
+
+
+// LOGO
+// ====
+
+@import "logo.less";
+
+.logo {
+  font-family: 'Karli', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin-right: -3px;
+  position: relative;
+  text-transform: uppercase;
+  top: 0;
+}
 
 // RESPONSIMAGE
 // ============
@@ -194,6 +210,10 @@ hr.soften {
 // HTML Elements
 // =============
 
+body {
+  background: url('../img/texture/noise.png') repeat;
+}
+
 a {
   -webkit-transition: color 150ms ease-in-out, background 150ms ease-in-out;
 
@@ -259,12 +279,12 @@ a {
 }
 
 .section-header {
-  color: lighten(@color-black, 50%);
-  font-family: @league;
-  font-weight: normal;
-  font-size: 40px;
+  color: darken(@color-white, 15%);
+  font-family: @sans;
+  font-weight: bold;
+  font-size: 24px;
   text-transform: uppercase;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
 
@@ -273,8 +293,8 @@ a {
     font-size: 12px;
     content: "• • • • • • • • • • ";
     position: relative;
-    top: -10px;
-    color: darken(@color-white, 15%);
+    top: -5px;
+    color: darken(@color-white, 10%);
     letter-spacing: 4px;
   }
 
@@ -287,55 +307,37 @@ a {
 // ===============
 
 body > .navbar .brand {
+  color: lighten(@color-black, 10%);
   float: left;
-  font-family: @league;
-  font-size: 40px;
-  font-weight: 300;
+  font-family: 'Karli', sans-serif;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: normal;
   left: 0;
   margin-left: 5px;
+  outline: none;
   position: relative;
-  text-shadow: 0 1px 0 lighten(@color-accent, 10%);
+  text-shadow: none !important;
   text-transform: uppercase;
-  top: 15px;
-  visibility: hidden;
+  top: 11px;
 
-  strong {
-    background: darken(@color-accent, 15%);
-    border-bottom: 5px solid darken(@color-accent, 25%);
-    color: lighten(@color-accent, 30%);
-    font-family: @league-script;
-    margin-right: 15px;
-    padding: 21px 25px 5px 25px;
-    text-transform: lowercase;
-    text-shadow: none;
-    visibility: visible;
+  .ostrich {
+    font-family: OstrichSans;
+    font-size: 42px;
+    font-weight: 400;
+    position: relative;
+    top: -13px;
   }
 
-  span {
-    color: darken(@color-accent, 10%);
-  }
-
-  &:hover {
-    color: darken(@color-accent, 30%);
-    text-shadow: 0 1px 0 lighten(@color-accent, 10%);
-    visibility: visible;
-
-    strong {
-      .box-shadow(0 1px 8px rgba(255,255,255,0.25));
-      color: @color-white;
-    }
-
-    span {
-      color: darken(@color-accent, 10%);
-    }
+  &:hover{
+    color: lighten(@color-black, 35%);
   }
 }
 
 .navbar {
-  background: darken(@color-accent, 2%) url(../img/texture/noise.png) repeat;
+  background: rgba(255,255,255,0.75);
   border: none;
-  border-bottom: 1px solid darken(@color-accent, 5%);
-  .box-shadow(0 1px 3px rgba(0,0,0,0.25));
+  .box-shadow(0 1px 5px rgba(0,0,0,0.05));
 
  .title {
     font-weight: bold;
@@ -378,23 +380,16 @@ body > .navbar .brand {
         }
       }
 
-      &:last-child {
-        a {
-          border-right: 1px solid darken(@color-accent, 10%);
-        }
-      }
-
 
       a {
         height: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        color: #fff;
-        border-top: 4px solid darken(@color-accent, 10%);
-        border-left: 1px solid darken(@color-accent, 10%);
+        color: @color-accent;
         font-size: 16px;
         font-weight: 300;
         letter-spacing: 0.04em;
+        padding-bottom: 25px;
+        padding-top: 25px;
+        text-shadow: none;
 
         &.dropdown {
           font-size: 18px;
@@ -413,7 +408,8 @@ body > .navbar .brand {
         }
 
         &:hover {
-          background: darken(@color-accent, 10%);
+          background: lighten(@color-accent, 10%);
+          text-shadow: none;
         }
 
 
@@ -441,42 +437,39 @@ body > .navbar .brand {
 }
 
 .jumbotron {
-  background: url('../img/texture/retina_dust.png') repeat;
-  border-bottom: 1px solid lighten(@color-black, 70%);
+  background: darken(@color-white, 5%) url(../img/texture/noise.png) repeat;
   .border-radius(0);
   margin-bottom: 0;
-  margin-top: 16px;
+  margin-top: 25px;
+
+  h1 {
+    color: darken(@color-white, 3%);
+    font-size: 200px;
+    font-weight: normal;
+    position: relative;
+    text-shadow: none;
+    top: -10px;
+    z-index: -99;
+  }
 
   &.masthead {
-    padding: 38px 0 40px 0;
+    padding: 40px 0;
     .box-shadow(none);
-
-    h2 {
-      font-family: @league;
-      font-size: 55px;
-      font-weight: normal;
-      color: darken(@color-accent, 30%);
-      text-shadow: 0 1px 0 @color-white;
-      text-transform: uppercase;
-      padding-top: 55px;
-
-      span {
-        color: lighten(@color-accent, 10%);
-      }
-    }
 
     p {
       margin-bottom: 0;
       padding: 0 30px;
 
       &.vision {
-        font-family: @serif;
-        font-weight: normal;
-        font-size: 28px;
+        font-family: @sans;
+        font-weight: 300;
+        font-size: 40px;
         text-align: center;
+        margin-top: -110px;
         padding: 10px 100px 40px 100px;
         color: lighten(@color-black, 50%);
-        text-shadow: 0 1px #fff;
+        text-shadow: none;
+        z-index: 10;
 
         .amp {
           color: lighten(@color-black, 65%);
@@ -516,17 +509,10 @@ body > .navbar .brand {
   }
 
   &.subhead {
+    border-bottom: none;
     .box-shadow(none);
-    padding: 60px 0 50px 0;
+    padding: 60px 0;
   }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2) {
-
-  .jumbotron {
-    background: url('../img/texture/retina_dust_@2X.png') repeat;
-  }
-
 }
 
 // EDIT LINKS
@@ -551,17 +537,16 @@ body > .navbar .brand {
 .page-headers {
 
   h1 {
+    font-size: 60px;
     margin-top: 0;
 
     a {
       color: darken(@color-white, 45%);
-      font-size: 78px;
-      font-family: @league;
+      font-family: @league-script;
+      font-size: 48px;
+      font-weight: 400;
       letter-spacing: 0.02em;
       text-align: left;
-      text-shadow: 0 1px 0 @color-white, 0 -1px 0 darken(@color-white, 35%);
-      text-transform: uppercase;
-
 
       &:hover {
         color: #fff;
@@ -609,7 +594,7 @@ body > .navbar .brand {
 
       h2 {
         font-size: 54px;
-        font-family: @league;
+        font-family: @sans;
         text-transform: uppercase;
         margin-top: 25px;
         margin-bottom: 15px;
@@ -1028,9 +1013,6 @@ body > .navbar .brand {
 
   .entry {
     .box-shadow(0 -2px 8px rgba(0,0,0,0.1));
-    * {
-      font-family: @courier;
-    }
 
     h5 {
       font-size: 20px;
@@ -1212,7 +1194,7 @@ body > .navbar .brand {
 }
 
 
-.artwork-entry {
+.featured-entry {
   text-align: left;
 
 
@@ -1371,6 +1353,12 @@ body > .navbar .brand {
     }
   }
 
+  &.featured {
+    .metadata {
+      bottom: -270px;
+    }
+  }
+
   .metadata {
     background: #fff;
     position: absolute;
@@ -1410,7 +1398,6 @@ body > .navbar .brand {
 // PAGES
 // =====
 
-.page-artwork,
 .page-photo {
 
   .wrapper {
@@ -1421,7 +1408,7 @@ body > .navbar .brand {
 
     h4 {
       color: lighten(@color-black, 15%);
-      font-family: @league;
+      font-family: @sans;
       text-transform: uppercase;
       font-size: 32px;
       font-weight: normal;
@@ -1459,7 +1446,7 @@ body > .navbar .brand {
 
   .other {
     color: darken(@color-white, 15%);
-    font-family: @league;
+    font-family: @sans;
     font-size: 26px;
     font-weight: normal;
     letter-spacing: 0.04em;
@@ -1487,20 +1474,22 @@ body > .navbar .brand {
 
 .footer {
   margin-top: 0;
-  background: url('../img/texture/retina_dust.png') repeat;
+  background: @color-accent;
   border-top: 1px solid lighten(@color-black, 70%);
   color: darken(@color-white, 30%);
 
   .brand {
-    position: relative;
-    top: -10px;
-    text-align: left;
+    color: darken(@color-white, 10%);
+    font-family: 'Karli';
+    font-size: 80px;
+    font-weight: normal;
+    left: -10px;
     margin-left: 0;
-    color: darken(@color-white, 40%);
-    font-family: @league;
+    position: relative;
+    text-align: left;
+    text-shadow: none;
     text-transform: uppercase;
-    text-shadow: 0 1px 0 #fff, 0 -1px 0 darken(@color-white, 55%);
-    font-size: 40px;
+    top: -10px;
 
     span {
       color: darken(@color-white, 25%);
@@ -1520,16 +1509,42 @@ body > .navbar .brand {
     }
   }
 
+  .insta {
+    position: relative;
+    top: -30px;
+  }
+
+  .link-row {
+    position: relative;
+    top: -40px;
+
+    .instagram {
+      color: darken(@color-accent, 10%);
+      font-family: @league-script;
+      font-size: 20px;
+      position: relative;
+      text-align: right;
+
+      &:hover {
+        color: darken(@color-accent, 15%);
+        border-bottom: 2px solid lighten(@color-accent, 10%);
+      }
+    }
+  }
+
+  .main-row {
+    position: relative;
+    top: -20px;
+  }
+
   p {
     font-family: @serif;
     font-size: 16px;
-    color: darken(@color-black, 10%);
-    text-shadow: 0 1px 0 lighten(@color-black, 5%);
+    color: darken(@color-accent, 5%);
 
     &.lead {
-      color: darken(@color-white, 25%);
+      color: darken(@color-accent, 8%);
       margin-bottom: 15px;
-      text-shadow: 0 1px 0 @color-white;
     }
 
     a {
@@ -1538,10 +1553,9 @@ body > .navbar .brand {
   }
 
   h5 {
-    margin-top: 38px;
     color: lighten(@color-black, 20%);
-    text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
+    margin-top: 38px;
   }
 
   .nav {
@@ -1552,7 +1566,6 @@ body > .navbar .brand {
       .box-shadow(none);
 
       .nav-header {
-        text-shadow: 0 1px 0 #fff;
         color: #000;
       }
 
@@ -1560,22 +1573,23 @@ body > .navbar .brand {
 
         &.active {
           a {
-            color: lighten(@color-accent, 20%);
+            color: lighten(@color-accent, 30%);
             background-color: transparent;
             border: none;
             .box-shadow(none);
-            text-shadow: 0 1px 0 #fff;
           }
         }
 
         a {
-          color: lighten(@color-black, 20%);
-          font-weight: bold;
-          text-transform: uppercase;
           border: none;
           .border-radius(0);
+          color: lighten(@color-black, 20%);
+          font-family: @sans;
+          font-weight: 700;
           margin: 0;
           padding: 10px 0;
+          text-transform: uppercase;
+          text-shadow: none;
 
           &:hover {
             color: @color-black;
@@ -1587,27 +1601,32 @@ body > .navbar .brand {
 
   }
 
-  .copyright {
-    font-family: @serif;
-    color: darken(@color-white, 25%);
-    text-shadow: 0 1px 0 #fff;
-  }
+}
 
-  hr {
-    height: 1px;
-    background: #ccc;
-    border: none;
-    border-bottom: 1px solid @color-white;
+// BASELINE
+// ========
 
-    &.special {
-      margin-bottom: 60px;
-      -webkit-mask-box-image:
-      -webkit-linear-gradient(
-          left,transparent, transparent 2%, white 5%, white 95%, transparent 98%);
+.baseline {
+  background: darken(@color-accent, 10%);
+  padding: 32px 0 33px 0;
+
+  p {
+    color: lighten(desaturate(@color-accent, 20%), 20%);
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+
+    a {
+      border-bottom: 2px solid darken(@color-accent, 14%);
+      color: lighten(@color-accent, 20%);
+      padding-bottom: 2px;
+
+      &:hover {
+        border-bottom: 2px solid darken(@color-accent, 19%);
+        color: lighten(@color-accent, 30%);
+      }
     }
-
   }
-
 }
 
 // IMAGE TILES
