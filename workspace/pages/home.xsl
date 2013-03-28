@@ -20,7 +20,13 @@
     </div>
 
     <div class="row">
-      <xsl:apply-templates select="/data/photo-featured/entry"/>
+      <div id="frontCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <xsl:apply-templates select="/data/photo-featured/entry"/>
+        </div>
+        <a class="left carousel-control" href="#frontCarousel" data-slide="prev">&lt;</a>
+        <a class="right carousel-control" href="#frontCarousel" data-slide="next">&gt;</a>
+      </div>
     </div>
 
 
@@ -32,8 +38,12 @@
     </div>
 
     <div class="row">
-      <div class="span6">
-        <xsl:apply-templates select="/data/blog-latest/entry"/>
+      <div class="span12">
+        <h3 class="section-header photo">From the Blog</h3>
+      </div>
+      <xsl:apply-templates select="/data/blog-latest/entry"/>
+      <div class="span12">
+        <p class="pull-right post-link"><a href="/blog">See all posts &#8594;</a></p>
       </div>
     </div>
 

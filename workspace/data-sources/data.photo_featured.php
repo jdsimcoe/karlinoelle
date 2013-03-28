@@ -6,7 +6,7 @@
 
 		public $dsParamROOTELEMENT = 'photo-featured';
 		public $dsParamORDER = 'desc';
-		public $dsParamPAGINATERESULTS = 'yes';
+		public $dsParamPAGINATERESULTS = 'no';
 		public $dsParamLIMIT = '1';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
@@ -40,7 +40,7 @@
 					'website' => 'http://karlinoelle',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-03-20T20:30:29+00:00'
+				'release-date' => '2013-03-28T17:14:16+00:00'
 			);
 		}
 

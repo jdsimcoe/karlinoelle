@@ -7,7 +7,7 @@
 		public $dsParamROOTELEMENT = 'blog-latest';
 		public $dsParamORDER = 'desc';
 		public $dsParamPAGINATERESULTS = 'yes';
-		public $dsParamLIMIT = '1';
+		public $dsParamLIMIT = '3';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'date';
@@ -42,7 +42,7 @@
 					'website' => 'http://karlinoelle',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-03-20T20:24:52+00:00'
+				'release-date' => '2013-03-28T19:55:20+00:00'
 			);
 		}
 

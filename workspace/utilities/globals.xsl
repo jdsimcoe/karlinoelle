@@ -7,21 +7,21 @@
      ======== -->
 
 
-<xsl:template match="/data/writing-latest/entry">
-  <xsl:call-template name="writing-entry"/>
+<xsl:template match="/data/blog-latest/entry">
+  <xsl:call-template name="blog-grid-entry"/>
 </xsl:template>
 
 
-<xsl:template match="/data/writing-single/entry">
-  <xsl:call-template name="writing-entry"/>
+<xsl:template match="/data/blog-single/entry">
+  <xsl:call-template name="blog-entry"/>
 </xsl:template>
 
-<xsl:template match="/data/writing-all/entry">
-  <xsl:call-template name="writing-grid-entry"/>
+<xsl:template match="/data/blog-all/entry">
+  <xsl:call-template name="blog-grid-entry"/>
 </xsl:template>
 
 
-<xsl:template name="writing-entry">
+<xsl:template name="blog-entry">
   <div>
     <xsl:choose>
       <xsl:when test="$root-page = 'home' or $root-page = 'error'">
@@ -95,49 +95,39 @@
   </div>
 </xsl:template>
 
-<xsl:template name="writing-grid-entry">
-  <div class="span6 wrapper-blog grid">
-    <div class="article entry list single">
-
-      <h5 class="center">
-        <xsl:call-template name="format-date">
-          <xsl:with-param name="date" select="date/date/start/@iso" />
-          <xsl:with-param name="format" select="'%m+; '" />
-        </xsl:call-template>
-        <xsl:call-template name="format-date">
-          <xsl:with-param name="date" select="date/date/start/@iso" />
-          <xsl:with-param name="format" select="'%d;'" />
-        </xsl:call-template>
-        <sup>
+<xsl:template name="blog-grid-entry">
+  <div class="span4">
+    <div class="article entry list">
+      <a href="{$root}/writing/{title/@handle}">
+        <h5 class="center">
           <xsl:call-template name="format-date">
             <xsl:with-param name="date" select="date/date/start/@iso" />
-            <xsl:with-param name="format" select="'%ds;'" />
+            <xsl:with-param name="format" select="'%m+; '" />
           </xsl:call-template>
-        </sup>
-        <xsl:call-template name="format-date">
-          <xsl:with-param name="date" select="date/date/start/@iso" />
-          <xsl:with-param name="format" select="', %y+;'" />
-        </xsl:call-template>
-      </h5>
-      <hr/>
-      <div class="inner">
-        <h1>
-          <a href="{$root}/writing/{title/@handle}">
-            <xsl:value-of select="title" />
-          </a>
-        </h1>
-        <div class="content">
+          <xsl:call-template name="format-date">
+            <xsl:with-param name="date" select="date/date/start/@iso" />
+            <xsl:with-param name="format" select="'%d;'" />
+          </xsl:call-template>
+          <xsl:call-template name="format-date">
+            <xsl:with-param name="date" select="date/date/start/@iso" />
+            <xsl:with-param name="format" select="', %y+;'" />
+          </xsl:call-template>
+        </h5>
+        <div class="inner">
+          <h3>
+              <xsl:value-of select="title" />
+          </h3>
+          <div class="content">
 
-          <xsl:call-template name="truncate">
-            <xsl:with-param name="node" select="content" />
-            <xsl:with-param name="length" select="200" />
-          </xsl:call-template>
-          <p class="right">
-            <a href="{$root}/writing/{title/@handle}">Read <strong>&#8594;</strong></a>
-          </p>
+            <xsl:call-template name="truncate">
+              <xsl:with-param name="node" select="content" />
+              <xsl:with-param name="length" select="200" />
+            </xsl:call-template>
+
+          </div>
 
         </div>
-      </div>
+      </a>
     </div>
 
 
@@ -155,23 +145,41 @@
 
 <xsl:template name="photo-featured-entry">
 
-  <div class="span12 photo">
-    <a href="{$root}/photo/{title/@handle}" class="photo-entry home featured">
-      <div class="metadata">
-        <h4>
-          <xsl:value-of select="title" />
-        </h4>
-        <p class="description">
-          <em><xsl:value-of select="image/item/caption"/></em>
-        </p>
-      </div>
-      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:100%; height:550px;">
-        <xsl:attribute name="data-responsimage">
-          <xsl:value-of select="image/item/image/filename" />
-        </xsl:attribute>
-      </img>
-    </a>
+  <div class="item">
+
+    <xsl:attribute name="class">
+      <xsl:choose>
+        <xsl:when test="position() = 1">
+          <xsl:text>item active</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text>item</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:attribute>
+
+    <div class="span12 photo">
+      <a href="{$root}/photo/{title/@handle}" class="photo-entry home featured">
+        <div class="metadata">
+          <h4>
+            <xsl:value-of select="title" />
+          </h4>
+          <p class="description">
+            <em><xsl:value-of select="image/item/caption"/></em>
+          </p>
+        </div>
+        <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/image/caption}" style="width:1000px; height:550px;">
+          <xsl:attribute name="data-responsimage">
+            <xsl:value-of select="image/item/image/filename" />
+          </xsl:attribute>
+        </img>
+      </a>
+    </div>
   </div>
+
+
+
+
 
 </xsl:template>
 
