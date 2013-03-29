@@ -15,13 +15,14 @@
       <xsl:choose>
         <xsl:when test="$title = '' or number($title)">
 
-          <div class="row">
+          <div class="row posts">
+            <h3 class="section-header photo">Articles &amp; Posts by Karli</h3>
             <div class="span12">
-              <xsl:apply-templates select="/data/writing-all/entry"/>
+              <xsl:apply-templates select="/data/blog-all/entry"/>
 
               <xsl:call-template name="cd-pagination">
-                <xsl:with-param name="pagination" select="/data/writing-all/pagination" />
-                <xsl:with-param name="pagination-url" select="'/writing/$'" />
+                <xsl:with-param name="pagination" select="/data/blog-all/pagination" />
+                <xsl:with-param name="pagination-url" select="'/blog/$'" />
               </xsl:call-template>
 
             </div>
@@ -30,7 +31,7 @@
         <xsl:otherwise>
           <div class="row">
             <div class="span12">
-              <xsl:apply-templates select="/data/writing-single/entry"/>
+              <xsl:apply-templates select="/data/blog-single/entry"/>
             </div>
           </div>
         </xsl:otherwise>
@@ -41,7 +42,7 @@
 </xsl:template>
 
 
-<!-- <xsl:template match="/data/writing-single/entry">
+<xsl:template match="/data/blog-single/entry">
   <div class="article entry">
     <h4 class="center">
       <xsl:call-template name="format-date">
@@ -79,7 +80,7 @@
       <xsl:value-of select="$page-title" />
     </strong>
   </a>
-</xsl:template> -->
+</xsl:template>
 
 
 

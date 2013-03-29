@@ -32,9 +32,9 @@
 
     <div class="row">
       <div class="span12">
-        <h3 class="section-header photo">Photography</h3>
+        <h3 class="section-header photo">Categories</h3>
       </div>
-      <xsl:apply-templates select="/data/photo-4-latest/entry"/>
+      <xsl:apply-templates select="/data/category-all/entry"/>
     </div>
 
     <div class="row">

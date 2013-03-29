@@ -16,8 +16,7 @@
         <xsl:when test="$title = '' or number($title)">
 
           <div class="row">
-            <h3 class="section-header photo">Browse the Lightbox</h3>
-            <xsl:apply-templates select="/data/photo-all/entry"/>
+            <xsl:call-template name="photo-grid"/>
           </div>
 
           <div class="row">
@@ -30,6 +29,14 @@
           </div>
 
         </xsl:when>
+        <xsl:when test="$title = 'category'">
+          <div class="row">
+            <h3 class="section-header photo">
+              <xsl:value-of select="$category"/>
+            </h3>
+            <xsl:apply-templates select="/data/photo-all/entry[category/item/@id = //category-all/entry[title/@handle = $category]/@id]"/>
+          </div>
+        </xsl:when>
         <xsl:otherwise>
           <div class="row">
             <div class="span12">
@@ -40,6 +47,28 @@
       </xsl:choose>
 
     </div>
+
+</xsl:template>
+
+<xsl:template name="photo-grid">
+
+  <xsl:for-each select="//data/category-all/entry">
+    <xsl:variable name="catid" select="@id"/>
+
+    <h3 class="section-header photo">
+      <xsl:value-of select="title"/>
+    </h3>
+<!--     <h5>
+      <xsl:value-of select="description"/>
+    </h5> -->
+    <xsl:for-each select="//photo-all/entry[category/item/@id = $catid]">
+      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:240px; height:240px;">
+        <xsl:attribute name="data-responsimage">
+          <xsl:value-of select="image/item/image/filename" />
+        </xsl:attribute>
+      </img>
+    </xsl:for-each>
+  </xsl:for-each>
 
 </xsl:template>
 
@@ -55,9 +84,6 @@
           <em><xsl:value-of select="image/item/caption" /></em>
         </p>
       </div>
-      <xsl:if test="featured = 'Yes'">
-        <div class="featured small">Featured</div>
-      </xsl:if>
       <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:240px; height:240px;">
         <xsl:attribute name="data-responsimage">
           <xsl:value-of select="image/item/image/filename" />

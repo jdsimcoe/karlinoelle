@@ -61,7 +61,7 @@
           </xsl:call-template>
         </h4>
         <h1>
-          <a href="{$root}/writing/{title/@handle}">
+          <a href="{$root}/blog/{title/@handle}">
             <xsl:value-of select="title" />
           </a>
         </h1>
@@ -78,7 +78,7 @@
                 </xsl:call-template>
               </p>
               <p class="right">
-                <a href="{$root}/writing/{title/@handle}">Read <strong>Full Article </strong> <strong>&#8594;</strong></a>
+                <a href="{$root}/blog/{title/@handle}">Read <strong>Full Article </strong> <strong>&#8594;</strong></a>
               </p>
             </xsl:when>
             <xsl:otherwise>
@@ -98,7 +98,7 @@
 <xsl:template name="blog-grid-entry">
   <div class="span4">
     <div class="article entry list">
-      <a href="{$root}/writing/{title/@handle}">
+      <a href="{$root}/blog/{title/@handle}">
         <h5 class="center">
           <xsl:call-template name="format-date">
             <xsl:with-param name="date" select="date/date/start/@iso" />
@@ -138,10 +138,44 @@
 <!-- PHOTOGRAPHY
      =========== -->
 
+
+<xsl:template match="/data/category-all/entry">
+  <xsl:call-template name="photo-by-category-entry"/>
+</xsl:template>
+
+<xsl:template name="photo-by-category-entry">
+
+
+  <xsl:variable name="catid" select="@id"/>
+
+  <div class="span3 photo">
+    <a href="{$root}/photo/category/{title/@handle}" class="photo-entry home">
+      <div class="metadata">
+        <h4>
+          <xsl:value-of select="title" />
+        </h4>
+        <p class="description">
+          <em><xsl:value-of select="description"/></em>
+        </p>
+      </div>
+      <img class="img-polaroid" src="/workspace/img/spacer.gif" style="width:240px; height:240px;">
+        <xsl:attribute name="alt">
+          <xsl:value-of select="title"/>
+        </xsl:attribute>
+        <xsl:attribute name="data-responsimage">
+          <xsl:value-of select="//photo-all/entry[category/item/@id = $catid]/image/item/image/filename" />
+        </xsl:attribute>
+      </img>
+
+    </a>
+  </div>
+
+</xsl:template>
+
+
 <xsl:template match="/data/photo-featured/entry">
   <xsl:call-template name="photo-featured-entry"/>
 </xsl:template>
-
 
 <xsl:template name="photo-featured-entry">
 
@@ -177,18 +211,12 @@
     </div>
   </div>
 
-
-
-
-
 </xsl:template>
-
 
 
 <xsl:template match="/data/photo-4-latest/entry">
   <xsl:call-template name="photo-entry"/>
 </xsl:template>
-
 
 <xsl:template name="photo-entry">
 
