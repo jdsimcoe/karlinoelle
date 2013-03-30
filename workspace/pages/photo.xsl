@@ -16,7 +16,9 @@
         <xsl:when test="$title = '' or number($title)">
 
           <div class="row">
-            <xsl:call-template name="photo-grid"/>
+            <div class="span12">
+              <xsl:call-template name="photo-grid"/>
+            </div>
           </div>
 
           <div class="row">
@@ -52,22 +54,45 @@
 
 <xsl:template name="photo-grid">
 
-  <xsl:for-each select="//data/category-all/entry">
-    <xsl:variable name="catid" select="@id"/>
 
-    <h3 class="section-header photo">
-      <xsl:value-of select="title"/>
-    </h3>
-<!--     <h5>
-      <xsl:value-of select="description"/>
-    </h5> -->
-    <xsl:for-each select="//photo-all/entry[category/item/@id = $catid]">
-      <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:240px; height:240px;">
-        <xsl:attribute name="data-responsimage">
-          <xsl:value-of select="image/item/image/filename" />
-        </xsl:attribute>
-      </img>
-    </xsl:for-each>
+  <xsl:for-each select="//data/category-all/entry">
+    <div class="row photo-grid">
+
+      <xsl:variable name="catid" select="@id"/>
+
+      <h3 class="section-header photo">
+        <xsl:value-of select="title"/>
+      </h3>
+      <h5 class="center">
+        <em>
+          <xsl:value-of select="description"/>
+        </em>
+      </h5>
+      <xsl:for-each select="//photo-all/entry[position() &lt; 9 and category/item/@id = $catid]">
+        <div class="span3">
+          <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:240px; height:240px;">
+            <xsl:attribute name="data-responsimage">
+              <xsl:value-of select="image/item/image/filename" />
+            </xsl:attribute>
+          </img>
+        </div>
+      </xsl:for-each>
+      <div class="span12">
+        <p class="pull-right post-link">
+          <a>
+            <xsl:attribute name="href">
+              <xsl:value-of select="$root"/>
+              <xsl:text>/photo/category/</xsl:text>
+              <xsl:value-of select="title/@handle"/>
+            </xsl:attribute>
+            <xsl:text>See all </xsl:text>
+            <strong><xsl:value-of select="title"/></strong>
+            <xsl:text> photos &#8594;</xsl:text>
+          </a>
+        </p>
+      </div>
+    </div>
+
   </xsl:for-each>
 
 </xsl:template>

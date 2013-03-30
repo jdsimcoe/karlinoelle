@@ -113,7 +113,7 @@
 @serif: Georgia, Times, serif;
 @league: 'League Gothic', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 @ostrich: OstrichSans, sans-serif;
-@wisdom: 'WisdomScript', cursive;
+@rouge: 'Rouge Script', cursive;
 
 
 // LOGO
@@ -495,7 +495,7 @@ body > .navbar .brand {
 }
 
 .jumbotron {
-  background: darken(@color-white, 5%) url(../img/texture/noise.png) repeat;
+  background: darken(@color-white, 10%) url(../img/texture/noise.png) repeat;
   .border-radius(0);
   margin-bottom: 0;
   margin-top: 25px;
@@ -595,20 +595,20 @@ body > .navbar .brand {
 .page-headers {
 
   h1 {
-    font-size: 60px;
+    font-size: 74px;
     margin-top: 20px;
     text-align: left;
 
     a {
-      color: darken(@color-white, 45%);
-      font-family: @wisdom;
-      font-size: 64px;
-      font-weight: 400;
-      letter-spacing: 0.014em;
+      color: #fff;
+      font-family: @rouge;
+      font-size: 74px;
+      font-weight: normal;
+      text-shadow: 0 1px 2px darken(@color-white, 30%);
 
       &:hover {
-        color: #fff;
-        text-shadow: 0 1px 2px darken(@color-white, 15%);
+        color: darken(@color-white, 45%);
+        text-shadow: 0 1px 0 @color-white;
       }
     }
   }
@@ -1424,40 +1424,17 @@ body > .navbar .brand {
 
 }
 
-.wrapper-books {
-  margin-top: 30px;
 
-  h3 {
-    font-weight: 300;
+.photo-grid {
+
+  h5 {
+    color: darken(@color-white, 10%);
+    font-family: @serif;
+    font-size: 20px;
+    font-weight: normal;
+    position: relative;
+    top: -40px;
   }
-
-  .entry {
-    margin-top: 30px;
-
-    h2 {
-      margin-bottom: 0;
-    }
-
-    h3 {
-      font-weight: 300;
-      margin-top: 0;
-    }
-
-    .ratings {
-      font-size: 24px;
-      border-bottom: 1px solid darken(@color-white, 5%);
-      padding: 10px 0;
-    }
-
-    .content {
-
-      h4 {
-        position: relative;
-        bottom: -15px;
-      }
-    }
-  }
-
 }
 
 .photo-entry {
@@ -1638,8 +1615,8 @@ body > .navbar .brand {
 
     .instagram {
       color: darken(@color-accent, 10%);
-      font-family: @wisdom;
-      font-size: 20px;
+      font-family: @rouge;
+      font-size: 28px;
       position: relative;
       text-align: right;
 
