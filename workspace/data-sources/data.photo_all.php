@@ -26,6 +26,7 @@
 				'image: image',
 				'image: caption',
 				'category: title',
+				'category: description',
 				'featured'
 		);
 		
@@ -43,7 +44,7 @@
 					'website' => 'http://karlinoelle',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-03-29T18:33:11+00:00'
+				'release-date' => '2013-03-30T07:52:10+00:00'
 			);
 		}
 

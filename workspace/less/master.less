@@ -267,7 +267,7 @@ hr.soften {
 // =============
 
 body {
-  background: url('../img/texture/noise.png') repeat;
+  background: @color-white;
 }
 
 a {
@@ -335,7 +335,7 @@ a {
 }
 
 .section-header {
-  color: darken(@color-white, 15%);
+  color: darken(@color-white, 25%);
   font-family: @league;
   font-weight: normal;
   font-size: 40px;
@@ -344,6 +344,15 @@ a {
   text-align: center;
   text-shadow: 0 1px 0 @color-white;
   text-transform: uppercase;
+
+  a {
+    color: darken(@color-white, 25%);
+
+    &:hover {
+      color: darken(@color-white, 35%);
+      border-bottom: 2px solid darken(@color-white, 10%);
+    }
+  }
 
   &::before,
   &::after {
@@ -1341,6 +1350,7 @@ body > .navbar .brand {
     position: absolute;
     display: block;
     margin: 0 15px;
+    padding: 5px 10px;
     bottom: 0;
     left: -5px;
     right: -5px;
@@ -1353,8 +1363,9 @@ body > .navbar .brand {
       text-shadow: 0 1px 0 #fff;
     }
 
-      h4 {
+    h4 {
       margin-bottom: 5px;
+      margin-top: 10px;
       margin-left: 10px;
       color: lighten(@color-black, 15%);
     }
@@ -1569,12 +1580,12 @@ body > .navbar .brand {
 
 .footer {
   margin-top: 0;
-  background: @color-accent;
+  background: darken(@color-white, 10%) url(../img/texture/noise.png) repeat;
   border-top: 1px solid lighten(@color-black, 70%);
   color: darken(@color-white, 30%);
 
   .brand {
-    color: darken(@color-white, 10%);
+    color: darken(@color-white, 50%);
     font-family: 'Karli';
     font-size: 80px;
     font-weight: normal;
@@ -1591,7 +1602,7 @@ body > .navbar .brand {
     }
 
     &:hover {
-      color: darken(@color-white, 50%);
+      color: darken(@color-white, 60%);
 
       span {
         color: darken(@color-white, 30%);
@@ -1622,7 +1633,7 @@ body > .navbar .brand {
 
       &:hover {
         color: darken(@color-accent, 15%);
-        border-bottom: 2px solid lighten(@color-accent, 10%);
+        border-bottom: 2px solid lighten(@color-accent, 30%);
       }
     }
   }
@@ -1668,7 +1679,7 @@ body > .navbar .brand {
 
         &.active {
           a {
-            color: lighten(@color-accent, 30%);
+            color: lighten(@color-black, 20%);
             background-color: transparent;
             border: none;
             .box-shadow(none);
@@ -1678,7 +1689,7 @@ body > .navbar .brand {
         a {
           border: none;
           .border-radius(0);
-          color: lighten(@color-black, 20%);
+          color: lighten(@color-black, 40%);
           font-family: @sans;
           font-weight: 700;
           margin: 0;

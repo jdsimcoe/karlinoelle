@@ -32,10 +32,15 @@
 
         </xsl:when>
         <xsl:when test="$title = 'category'">
-          <div class="row">
+          <div class="row photo-grid">
             <h3 class="section-header photo">
               <xsl:value-of select="$category"/>
             </h3>
+            <h5 class="center">
+              <em>
+                <xsl:value-of select="/data/photo-all/entry/category[item/@id = //category-all/entry[title/@handle = $category]/@id]/item/description"/>
+              </em>
+            </h5>
             <xsl:apply-templates select="/data/photo-all/entry[category/item/@id = //category-all/entry[title/@handle = $category]/@id]"/>
           </div>
         </xsl:when>
@@ -61,13 +66,15 @@
       <xsl:variable name="catid" select="@id"/>
 
       <h3 class="section-header photo">
-        <xsl:value-of select="title"/>
+        <a>
+          <xsl:attribute name="href">
+            <xsl:value-of select="$root"/>
+            <xsl:text>/photo/category/</xsl:text>
+            <xsl:value-of select="title/@handle"/>
+          </xsl:attribute>
+          <xsl:value-of select="title"/>
+        </a>
       </h3>
-      <h5 class="center">
-        <em>
-          <xsl:value-of select="description"/>
-        </em>
-      </h5>
       <xsl:for-each select="//photo-all/entry[position() &lt; 9 and category/item/@id = $catid]">
         <div class="span3">
           <img class="img-polaroid" src="/workspace/img/spacer.gif" alt="{image/item/caption}" style="width:240px; height:240px;">
