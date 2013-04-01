@@ -59,11 +59,11 @@
     <meta name="author" content="Brian Simcoe" />
     <meta name="responsimage" data-server="{$root}/image/2/width/height/anchor/0/uploads/images/filename" data-static="{$workspace}/img/spacer.gif" data-loading="{$workspace}/img/loading.gif" />
 
-    <link href="{$workspace}/css/master.1.0.0.css" rel="stylesheet" />
+    <link href="{$workspace}/css/master.1.0.1.css" rel="stylesheet" />
     <link href="{$workspace}/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="apple-touch-icon-precomposed" href="{$workspace}/img/apple-touch-icon-precomposed.png" />
 
-    <script type="text/javascript" src="{$workspace}/js/master.1.0.0.js"></script>
+    <script type="text/javascript" src="{$workspace}/js/master.1.0.1.js"></script>
 
     <script type="text/javascript">
       <xsl:comment>
@@ -117,7 +117,8 @@
           <xsl:text>jumbotron masthead</xsl:text>
         </xsl:attribute>
         <div class="container">
-          <h1 class="logo">K</h1>
+          <img src="{$root}/workspace/img/spacer.gif" alt="{image/item/caption}" class="banner" style="width:100%;height:100%;" data-responsimage="banner.jpg" />
+          <span class="center logo">K</span>
         </div>
       </xsl:if>
     </div>
