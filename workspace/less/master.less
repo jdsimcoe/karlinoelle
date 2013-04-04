@@ -174,6 +174,66 @@
 
 }
 
+@btn-background: lighten(@color-accent, 15%);
+@btn-background-highlight: lighten(@color-accent, 5%);
+
+.btn {
+  background-image: none;
+  background: @btn-background;
+  border: 1px solid @btn-background;
+  .border-radius(@border-radius-base);
+  .box-shadow(none);
+  .box-sizing(border-box);
+  color: #fff;
+  text-shadow: none;
+
+  &:hover {
+    background: @btn-background-highlight;
+    border: 1px solid @btn-background-highlight;
+    color: #fff;
+  }
+
+  &.btn-primary {
+    background: @btn-background-primary;
+    border: 1px solid @btn-background-primary;
+
+    &:hover {
+      background: @btn-background-primary-highlight;
+      border: 1px solid @btn-background-primary-highlight;
+    }
+  }
+
+  &.btn-success {
+    background: @btn-background-success;
+    border: 1px solid @btn-background-success;
+
+    &:hover {
+      background: @btn-background-success-highlight;
+      border: 1px solid @btn-background-success-highlight;
+    }
+  }
+
+  &.btn-warning {
+    background: @btn-background-warning;
+    border: 1px solid @btn-background-warning;
+
+    &:hover {
+      background: @btn-background-warning-highlight;
+      border: 1px solid @btn-background-warning-highlight;
+    }
+  }
+
+  &.btn-danger {
+    background: @btn-background-danger;
+    border: 1px solid @btn-background-danger;
+
+    &:hover {
+      background: @btn-background-danger-highlight;
+      border: 1px solid @btn-background-danger-highlight;
+    }
+  }
+}
+
 .carousel {
   margin-bottom: 0px;
 
@@ -339,8 +399,7 @@ a {
   font-family: @league;
   font-weight: normal;
   font-size: 40px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 30px 0 20px 0;
   text-align: center;
   text-shadow: 0 1px 0 @color-white;
   text-transform: uppercase;
@@ -349,7 +408,7 @@ a {
     color: darken(@color-white, 25%);
 
     &:hover {
-      color: darken(@color-white, 35%);
+      color: darken(@color-white, 45%);
       border-bottom: 2px solid darken(@color-white, 10%);
     }
   }
@@ -404,6 +463,7 @@ body > .navbar .brand {
 .navbar {
   background: rgba(255,255,255,0.90);
   border: none;
+  border-bottom: 1px solid @color-white;
   .box-shadow(0 1px 5px rgba(0,0,0,0.05));
 
  .title {
@@ -516,18 +576,18 @@ body > .navbar .brand {
   .logo {
     color: lighten(@color-black, 25%);
     color: rgba(0,0,0,0.15);
-    font-size: 300px;
+    font-size: 235px;
     font-weight: normal;
     position: relative;
     text-shadow: none;
     left: -2px;
-    top: -218px;
+    top: -178px;
     z-index: 3;
   }
 
   &.masthead {
     margin-top: 0;
-    height: 470px;
+    height: 376px;
     padding: 25px 0 0 0;
     .box-shadow(none);
 
@@ -1078,6 +1138,10 @@ body > .navbar .brand {
 
 .posts {
   margin-bottom: 60px;
+
+  &.main {
+    margin-top: 30px;
+  }
 }
 
 .article {
@@ -1114,6 +1178,56 @@ body > .navbar .brand {
 
       h3 {
         color: @color-pop;
+      }
+
+    }
+
+  }
+
+  &.entry {
+
+    .section-header {
+      font-family: @sans;
+      font-size: 20px;
+      font-weight: 300;
+      text-transform: none;
+
+      &::before,
+      &::after {
+        top: -2px;
+      }
+    }
+
+    h2 {
+      font-family: @league;
+      font-size: 48px;
+      font-weight: normal;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .content {
+
+      p {
+        font-family: @sans;
+        font-size: 18px;
+        line-height: 1.8;
+        margin: 30px 0;
+        font-weight: 300;
+      }
+
+      blockquote {
+        color: #999;
+      }
+
+      ul, ol {
+
+        li {
+          font-size: 18px;
+          line-height: 1.8;
+          margin: 15px 0;
+          font-weight: 300;
+        }
       }
 
     }

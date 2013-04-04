@@ -31,7 +31,7 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:attribute name="class">
-          <xsl:text>wrapper-blog</xsl:text>
+          <xsl:text>wrapper-blog home</xsl:text>
         </xsl:attribute>
       </xsl:otherwise>
     </xsl:choose>

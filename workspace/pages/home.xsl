@@ -39,7 +39,7 @@
 
     <div class="row">
       <div class="span12">
-        <h3 class="section-header photo">From the Blog</h3>
+        <h3 class="section-header photo">From the <a href="/blog">Blog</a></h3>
       </div>
       <xsl:apply-templates select="/data/blog-latest/entry"/>
       <div class="span12">

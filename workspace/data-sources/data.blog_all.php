@@ -11,8 +11,7 @@
 		public $dsParamSTARTPAGE = '{$title}';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'date';
-		public $dsParamHTMLENCODE = 'yes';
-		public $dsParamASSOCIATEDENTRYCOUNTS = 'yes';
+		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 		
 
 		public $dsParamFILTERS = array(
@@ -45,7 +44,7 @@
 					'website' => 'http://karlinoelle',
 					'email' => 'jdsimcoe@gmail.com'),
 				'version' => 'Symphony 2.3.1',
-				'release-date' => '2013-03-20T20:24:32+00:00'
+				'release-date' => '2013-04-02T20:56:19+00:00'
 			);
 		}
 
