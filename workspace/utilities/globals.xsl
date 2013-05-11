@@ -149,7 +149,7 @@
   <xsl:variable name="catid" select="@id"/>
 
   <div class="span3 photo">
-    <a href="{$root}/photo/category/{title/@handle}" class="photo-entry home">
+    <a href="{$root}/portfolio/category/{title/@handle}" class="photo-entry home">
       <div class="metadata">
         <h4>
           <xsl:value-of select="title" />
@@ -193,7 +193,7 @@
     </xsl:attribute>
 
     <div class="span12 photo">
-      <a href="{$root}/photo/{title/@handle}" class="photo-entry home featured">
+      <a href="{$root}/portfolio/{title/@handle}" class="photo-entry home featured">
         <div class="metadata">
           <h4>
             <xsl:value-of select="title" />
@@ -221,7 +221,7 @@
 <xsl:template name="photo-entry">
 
   <div class="span3 photo">
-    <a href="{$root}/photo/{title/@handle}" class="photo-entry home">
+    <a href="{$root}/portfolio/{title/@handle}" class="photo-entry home">
       <div class="metadata">
         <h4>
           <xsl:value-of select="title" />

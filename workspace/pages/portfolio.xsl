@@ -69,7 +69,7 @@
         <a>
           <xsl:attribute name="href">
             <xsl:value-of select="$root"/>
-            <xsl:text>/photo/category/</xsl:text>
+            <xsl:text>/portfolio/category/</xsl:text>
             <xsl:value-of select="title/@handle"/>
           </xsl:attribute>
           <xsl:value-of select="title"/>
@@ -89,7 +89,7 @@
           <a>
             <xsl:attribute name="href">
               <xsl:value-of select="$root"/>
-              <xsl:text>/photo/category/</xsl:text>
+              <xsl:text>/portfolio/category/</xsl:text>
               <xsl:value-of select="title/@handle"/>
             </xsl:attribute>
             <xsl:text>See all </xsl:text>
@@ -107,7 +107,7 @@
 
 <xsl:template match="/data/photo-all/entry">
    <div class="span3 photo">
-    <a href="{$root}/photo/{title/@handle}" class="photo-entry home">
+    <a href="{$root}/portfolio/{title/@handle}" class="photo-entry home">
       <div class="metadata">
         <h4>
           <xsl:value-of select="title" />
