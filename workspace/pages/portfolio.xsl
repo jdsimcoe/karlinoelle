@@ -144,7 +144,7 @@
         </h4>
       </div>
     </div>
-    <div class="row">
+<!--     <div class="row">
       <div class="span9">
         <div class="content">
           <h4 class="top">Description</h4>
@@ -182,7 +182,7 @@
         </div>
       </div>
 
-    </div>
+    </div> -->
   </div>
 <!--   <hr/>
   <h5 class="other">Latest Photography</h5>

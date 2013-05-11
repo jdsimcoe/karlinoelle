@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         src: [
         '../less/master.less'
         ],
-        dest: '../css/master.1.0.1.css',
+        dest: '../css/master.1.0.2.css',
         options: {
             compile: true,
             compress: true
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
           '../js/responsimage.js',
           '../js/reftagger.js',
         ],
-        dest: '../js/master.1.0.1.js',
+        dest: '../js/master.1.0.2.js',
         separator: ';'
       }
     },

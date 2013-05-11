@@ -463,7 +463,6 @@ body > .navbar .brand {
 .navbar {
   background: rgba(255,255,255,0.90);
   border: none;
-  border-bottom: 1px solid @color-white;
   .box-shadow(0 1px 5px rgba(0,0,0,0.05));
 
  .title {
@@ -568,6 +567,7 @@ body > .navbar .brand {
   .border-radius(0);
   margin-bottom: 0;
   margin-top: 25px;
+  .box-shadow(none);
 
   .banner {
     z-index: 2;
@@ -586,10 +586,8 @@ body > .navbar .brand {
   }
 
   &.masthead {
-    margin-top: 0;
     height: 376px;
-    padding: 25px 0 0 0;
-    .box-shadow(none);
+    padding: 0 0 0 0;
 
     p {
       margin-bottom: 0;
@@ -643,11 +641,6 @@ body > .navbar .brand {
 
   }
 
-  &.subhead {
-    border-bottom: none;
-    .box-shadow(none);
-    padding: 45px 0 80px 0;
-  }
 }
 
 // EDIT LINKS
@@ -670,6 +663,7 @@ body > .navbar .brand {
 }
 
 .page-headers {
+  padding: 20px 0 40px 0;
 
   h1 {
     font-size: 74px;
@@ -677,15 +671,18 @@ body > .navbar .brand {
     text-align: left;
 
     a {
-      color: #fff;
-      font-family: @rouge;
+      border-bottom: 3px solid @color-white;
+      color: darken(@color-white, 45%);
+      font-family: @ostrich;
       font-size: 74px;
       font-weight: normal;
-      text-shadow: 0 1px 2px darken(@color-white, 30%);
+      letter-spacing: 2px;
+      text-shadow: none;
 
       &:hover {
-        color: darken(@color-white, 45%);
-        text-shadow: 0 1px 0 @color-white;
+        border-bottom-color: darken(@color-white, 45%);
+        color: #fff;
+        text-shadow: 0 1px 2px darken(@color-white, 30%);
       }
     }
   }
@@ -1566,7 +1563,7 @@ body > .navbar .brand {
     font-size: 20px;
     font-weight: normal;
     position: relative;
-    top: -40px;
+    top: -10px;
   }
 }
 
@@ -1717,7 +1714,7 @@ body > .navbar .brand {
     text-align: left;
     text-shadow: none;
     text-transform: uppercase;
-    top: -10px;
+    top: -25px;
 
     span {
       color: darken(@color-white, 25%);

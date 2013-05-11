@@ -17,7 +17,7 @@
 
 <xsl:template match="/">
 
-  <xsl:variable name="version">1.0.1</xsl:variable>
+  <xsl:variable name="version">1.0.2</xsl:variable>
 
   <html lang="en">
   <head>
@@ -137,7 +137,7 @@
           <div class="span2">
             <a href="{root}" class="brand">K</a>
           </div>
-          <div class="insta">
+<!--           <div class="insta">
             <div class="span1">
               <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
             </div>
@@ -168,15 +168,15 @@
             <div class="span1">
               <img src="http://placehold.it/69/cccccc/ffffff" class="img-polaroid" />
             </div>
-          </div>
+          </div> -->
         </div>
-        <div class="row link-row">
+<!--         <div class="row link-row">
           <div class="span12">
             <h5 class="right">
               <a href="/" class="instagram">From Instagram</a>
             </h5>
           </div>
-        </div>
+        </div> -->
         <div class="row main-row">
           <div class="span2">
             <ul class="nav nav-list">
